@@ -1,0 +1,29 @@
+{reg: [
+  {bits:1, name:"SKIP_DIS"},
+  {bits:1, name:"SCRAM_DIS"},
+  {bits:1, name:"TX_DATA_PCK"},
+  {bits:1, name:"MULT_FC"},
+  {bits:1, name:"MULT_CH"},
+  {bits:1, name:"MULT_EXT"},
+  {bits:2, name:"MEM_WAIT"},
+  
+  {bits:1, name:"INBAND"},
+  {bits:1, name:"INBAND_DYN_CAL"},
+  {bits:1, name:"OUTBAND"},
+  {bits:1, name:"OUTBAND_DYN_CAL"},
+  {bits:1, name:"DATA_TX_TO_RX_LB"},
+  {bits:1, name:"FC_TX_TO_RX_LB"},
+  {bits:1, name:"DATA_RX_TO_TX_LB"},
+  {bits:1, name:"FC_RX_TO_TX_LB"},
+  
+  {bits:4, name:"USER"},
+  {bits:1, name:"SERDES_SEL"},
+  {bits:1, name:"Reserved", type:1},
+  {bits:1, name:"FEC_BYPASS"},
+  {bits:1, name:"FEC_EN"},
+  
+  {bits:8, name:"Reserved", type:1}
+], config: {
+  hspace: 950, 
+  fontsize: 16, 
+  lanes: 8}}

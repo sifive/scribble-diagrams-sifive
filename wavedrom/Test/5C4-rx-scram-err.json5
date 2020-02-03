@@ -1,0 +1,8 @@
+{reg: [
+  {bits:32, name:"LANE"},
+ ],
+ config: {
+  hspace: 950, 
+  fontsize: 16, 
+  lanes: 1
+}}

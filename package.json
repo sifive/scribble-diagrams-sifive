@@ -1,0 +1,21 @@
+{
+  "name": "scribble-diagrams",
+  "version": "0.0.1",
+  "description": "Collection of open source circuit diagrams integrated into Scribble",
+  "author": "john_morris@sifive.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sifive/scribble-diagrams-sifive",
+    "files": [
+      "wavedrom", "register", "util"
+    ]
+  },
+  "dependencies": {
+    "wavedrom": ">=2.3.0"
+  },
+  "bin": {
+    "Register": "./register/RegisterMain.js",
+    "WaveDrom": "./wavedrom/WaveDromMain.js"
+  }
+}

@@ -1,0 +1,12 @@
+*~
+.DS_Store
+.idea
+venv
+node_modules
+output.yaml
+object-model-schema.iml
+om.scala
+wake.db
+.build
+*.iml
+*.old

@@ -1,0 +1,39 @@
+{
+  "reg": [
+    {
+      "bits": 8,
+      "name": "dmi_data_0"
+    },
+    {
+      "bits": 8,
+      "name": "dmi_data_1"
+    },
+    {
+      "bits": 8,
+      "name": "dmi_data_2"
+    },
+    {
+      "bits": 8,
+      "name": "dmi_data_3"
+    },
+    {
+      "bits": 8,
+      "name": "dmi_data_4"
+    },
+    {
+      "bits": 8,
+      "name": "dmi_data_5"
+    },
+    {
+      "bits": 8,
+      "name": "dmi_data_6"
+    },
+    {
+      "bits": 8,
+      "name": "dmi_data_7"
+    }
+  ],
+  "config": {
+    "bits": 64
+  }
+}

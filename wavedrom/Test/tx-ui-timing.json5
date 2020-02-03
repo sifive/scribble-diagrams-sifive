@@ -1,0 +1,14 @@
+{signal: [
+  {name:"CLK", wave:"p............."},
+  {name:"o_tx_stall", wave:"l....h..l....."},
+  {name:"i_tx_valid", wave:"h.....l..hlh.."},
+  {name:"t_tx_sob", wave:"hl..hl.....hlh"},
+  {name:"i_tx_eob", wave:"l..hl.h...l.h."},
+  {name:"i_tx_sop", wave:"hl..hl.......h"},
+  {name:"i_tx_eop", wave:"l.....h...l.h."},
+  {name:"i_tx_chan", wave:"=...=.....==.=", data:["8'h01", "8'h0D", "8'hx", "8'h01", "8'h02"]},
+  {name:"i_tx_data", wave:"=======...====", data:["", "", "", "", "", "", "", "8'hx"]}
+ ],
+ config: {
+
+}}
