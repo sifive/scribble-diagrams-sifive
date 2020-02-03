@@ -1,7 +1,7 @@
 const {WaveDrom} = require('../wavedrom/WaveDrom.js');
 
 // Use the generated Roboto text function from fonts.js to approximate text width for fontsize 1.
-const textWidth = require('../util/fonts.js').Roboto()(1).getWidth
+const robotoWidth = require('../util/fonts.js').Roboto()(1).getWidth;
 
 
 /******************************************************************
@@ -62,6 +62,6 @@ function Register(data) {
  */
 const pow2Down = (n) => Math.pow(2, Math.floor(Math.log2(n)));
 
-
+const textWidth = (s) => s ? robotoWidth(s): 0;
 
 module.exports = {Register};
