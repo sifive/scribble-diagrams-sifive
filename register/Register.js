@@ -59,7 +59,7 @@ function Register(data) {
  * Round a number down to the closest power of two.  (Note: integer optimizations possible)
  *    We are assuming no floating point error when dealing with integer powers of two.
  */
-const pow2Down = (n) => Math.pow(2, Math.floor(Math.log2(n)));
+const pow2Down = (n) => 2 ** Math.floor(Math.log2(n));
 
 
 /********************************************************************
