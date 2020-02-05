@@ -5,7 +5,7 @@ const robotoWidth = require('../util/fonts.js').Roboto()(1).getWidth;
 
 
 /******************************************************************
- * Use WaveDrom to create a Register diagram, adjusting lanes and fonts to fit the page.
+ * Use WaveDrom to create a Register Field diagram, adjusting lanes and fonts to fit the page.
  *   When invoked from a resizable (eg web) environment, "hspace" should reflect the new page width.
  * @param data - data in "wavedrom" format
  * @returns {string} - svg diagram
@@ -19,12 +19,12 @@ function Register(data) {
     var fontsize = config.fontsize || 12;
 
     // Find the biggest text mismatch for all the fields.
-    //   The mismatch ratio is expressed as the text width per bit.
+    //   The mismatch ratio is expressed as text width per bit.
     const ratios = data.reg.map(f => textWidth(f.name)/f.bits);
     const worst = Math.max(...ratios);
 
     // Get the configured bits per lane.
-    const totalBits = data.reg.map(f=>f.bits).reduce((x,y)=>x+y, 0);
+    const totalBits = sum(...data.reg.map(f=>f.bits));
     var bitsPerLane = Math.ceil(totalBits/lanes);
 
     // If the worst text doesn't fit into its field, start by rounding bits per lane down to a power of two.
@@ -42,14 +42,13 @@ function Register(data) {
         if (worst * fontsize * bitsPerLane < hspace)
             break;
 
-    // Construct new data with the new lanes, width and font size,
+    // Construct new data with the new lanes and font size,
     const newConfig = {
         ...config,
         lanes: Math.ceil(totalBits / bitsPerLane),
         fontsize,
-        hspace
     };
-    const newData = {...data, config:newConfig};
+    const newData = {...data, config: newConfig};
 
     // Create the register diagram using the rescaled data.
     return WaveDrom(newData);
@@ -62,6 +61,17 @@ function Register(data) {
  */
 const pow2Down = (n) => Math.pow(2, Math.floor(Math.log2(n)));
 
+
+/********************************************************************
+ * Approx width of a text string scaled to fontsize=1.
+ *   Based on Roboto without kerning. Null or empty strings should have zero width.
+ */
 const textWidth = (s) => s ? robotoWidth(s): 0;
+
+
+/*************************************************
+ * Get the sum of a list of numbers
+ */
+const sum = (...list) => list.reduce((a,b)=>a+b, 0);
 
 module.exports = {Register};
